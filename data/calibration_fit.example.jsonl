@@ -1,0 +1,12 @@
+{"id": "fit-01", "text": "Please refund the duplicate payment for March.", "label": true}
+{"id": "fit-02", "text": "I need my money back for the cancelled order.", "label": true}
+{"id": "fit-03", "text": "Reverse the second charge on my account.", "label": true}
+{"id": "fit-04", "text": "Please return the amount charged after cancellation.", "label": true}
+{"id": "fit-05", "text": "I would like a refund for order A102.", "label": true}
+{"id": "fit-06", "text": "Can you reimburse the extra payment?", "label": true}
+{"id": "fit-07", "text": "Please send a copy of my invoice.", "label": false}
+{"id": "fit-08", "text": "What is your refund policy?", "label": false}
+{"id": "fit-09", "text": "The app crashes on startup.", "label": false}
+{"id": "fit-10", "text": "I do not want a refund; please restore my subscription.", "label": false}
+{"id": "fit-11", "text": "Thank you, the payment issue is resolved.", "label": false}
+{"id": "fit-12", "text": "Can I change my billing address?", "label": false}

@@ -1,0 +1,250 @@
+{
+  "format_version": 1,
+  "title": "Laya: Russian official guide and six production scenarios",
+  "created_utc": "2026-11-01T22:02:31.011033+00:00",
+  "entrypoint_document": "02_PRODUCTION.md",
+  "general_document": "01_LAYA_GUIDE.md",
+  "laya_version": "0.4.21",
+  "official_source_commit": "0565524a27bcb9821bcd7c42aaf49d925f6f8560",
+  "model_lock": "models.lock.json",
+  "examples": [
+    "examples/01_refund.py",
+    "examples/02_route.py",
+    "examples/03_moderation.py",
+    "examples/04_priority.py",
+    "examples/05_batch.py",
+    "examples/06_api.py"
+  ],
+  "verification": {
+    "interpreter": "CPython 3.12.16",
+    "unit_tests": {
+      "command": "python -B -m unittest discover -s tests -v",
+      "passed": 18,
+      "failed": 0,
+      "scope": "Pure policies, JSONL input boundaries, numerical calibration and exact-identity/leakage checks; no mocked inference or model execution"
+    },
+    "syntax_compileall": {
+      "passed": true,
+      "targets": [
+        "production",
+        "examples",
+        "tools",
+        "tests"
+      ]
+    },
+    "cli_help": {
+      "passed": true,
+      "example_count": 6,
+      "utility_count": 2,
+      "imports_torch_transformers_laya": false
+    },
+    "calibration_cli_smoke": {
+      "passed": true,
+      "steps": [
+        "fit",
+        "evaluate",
+        "apply_refund_calibration",
+        "refuse overwrite"
+      ],
+      "data": "Temporary explicit synthetic numerical fixtures, not real model outputs; cleaned up"
+    },
+    "http_preinference_contract": {
+      "passed": true,
+      "transport": "FastAPI TestClient in process, lifespan not entered",
+      "status_codes": {
+        "health": 200,
+        "not_ready": 503,
+        "unauthorized": 401,
+        "authorized_not_ready": 503,
+        "empty_text": 422,
+        "unknown_scenario": 422,
+        "extra_field": 422,
+        "oversized_text": 422,
+        "invalid_request_id": 422
+      },
+      "model_runtime_instantiated": false
+    },
+    "published_sdk_route_smoke": {
+      "passed": true,
+      "sdk": "PyPI wheel laya==0.4.21",
+      "checks": [
+        "Real Runtime construction/metadata/close",
+        "explicit english/multilingual/typed-decisions routes",
+        "Russian text -> multilingual"
+      ],
+      "offline_flags": true,
+      "loaded_models": 0,
+      "imports_torch_transformers": false
+    },
+    "reference_dependencies": {
+      "resolution_passed": true,
+      "target_python": "3.12",
+      "resolver": "uv pip compile",
+      "full_ml_stack_installed": false,
+      "note": "Reference graph resolution only, not hardware compatibility or inference proof"
+    },
+    "published_wheel_api": {
+      "inspected": true,
+      "sha256": "38b53a8175581b19458a522603bf76516860528195559b300e7cd122a8dfad1c",
+      "scope": "Router constructor/predict/predict_batch and Agent typed answer shapes"
+    },
+    "compose_yaml": {
+      "parsed": true,
+      "docker_config_or_build_executed": false
+    },
+    "documentation": {
+      "upstream_numbered_examples_covered": 41,
+      "local_links_and_fragments_checked": true,
+      "pinned_github_paths_checked_against_extracted_source": true,
+      "external_http_links_not_exhaustively_checked": true
+    },
+    "not_executed": [
+      "Model weights download",
+      "Model inference for any checkpoint",
+      "GPU/CPU model quality or performance",
+      "API lifespan/startup with weights",
+      "Successful HTTP model inference",
+      "Concurrent GPU inference/backpressure under load",
+      "Docker engine config/build/run",
+      "Actual offline checkpoint loading",
+      "Model finetuning",
+      "Production calibration/accuracy assessment",
+      "Visual rendering of Mermaid diagrams"
+    ],
+    "environment_note": "A first attempt to install pydantic==2.11.7 under system Python 3.14 failed because pydantic-core/PyO3 does not support that interpreter. Checks were then performed under the declared Python 3.12 reference. No model was run."
+  },
+  "files": {
+    ".dockerignore": {
+      "bytes": 58,
+      "sha256": "83c0986aa16a5e6a4956731a0f072a394429263c9fdbd1ded25c20b334580740"
+    },
+    ".env.example": {
+      "bytes": 424,
+      "sha256": "8bd497968f824dd03188c6024f67890afd3d196e2d74f8d4e4631f77d4a22309"
+    },
+    ".gitignore": {
+      "bytes": 48,
+      "sha256": "da0e51af1ea05386ecdc277ce913da17c9fb36cb4a12e330498ae388f91f3c0a"
+    },
+    "01_LAYA_GUIDE.md": {
+      "bytes": 130397,
+      "sha256": "8e09d404e90e175c73a8f988793426a185f59d7f7b70f1ea4407a30e16b76a79"
+    },
+    "02_PRODUCTION.md": {
+      "bytes": 59306,
+      "sha256": "635595aedcb56e1d56e9602c07c1bff05f20514a4d20ff53a36c8639335255cb"
+    },
+    "Dockerfile": {
+      "bytes": 937,
+      "sha256": "2bfb768c8c7caab3380b22c65b82288aec3cb7a0fac4a50d20800e25a2ae4365"
+    },
+    "compose.gpu.yaml": {
+      "bytes": 160,
+      "sha256": "8b82d98c628fc036d75ef231ec53bae0204d70c900936e88ee3d277d3be3db0c"
+    },
+    "compose.yaml": {
+      "bytes": 555,
+      "sha256": "10ec958bf25b0eb4190b715944a0709a1113585756d44041d0d8acd31da65567"
+    },
+    "constraints-reference.txt": {
+      "bytes": 269,
+      "sha256": "d3c3f7c8477912b92125439d9d0b664da58fb5756f4db118283564b48d0bbda2"
+    },
+    "data/api_request.json": {
+      "bytes": 190,
+      "sha256": "7763952f2fc79f4aaac707c86744d37026d50e783e9e7eea2307469ac7f4ca48"
+    },
+    "data/calibration_eval.example.jsonl": {
+      "bytes": 1083,
+      "sha256": "925930c2bbd8db2feb9c56d21596a79ca74ff5326fafcff2ce5b8ee44d0409f7"
+    },
+    "data/calibration_fit.example.jsonl": {
+      "bytes": 1005,
+      "sha256": "155ec52555cdd14b1cdad40617a2ab6c6fb40da73b11b0b7733b670144358ca0"
+    },
+    "data/tickets.jsonl": {
+      "bytes": 1251,
+      "sha256": "593a6474a491a6e27f32a7a590d3c735a01dd97a51e45bde39885c92f6691b85"
+    },
+    "examples/01_refund.py": {
+      "bytes": 3559,
+      "sha256": "22655ec3d5cd81c3fdb0ebbc2dbffa335ce09eb10cebf509d0541c006f71c61a"
+    },
+    "examples/02_route.py": {
+      "bytes": 2776,
+      "sha256": "9a0d69b06faacdbed681892b4736da60e99030ca22d7315996d4c7df773ce5d4"
+    },
+    "examples/03_moderation.py": {
+      "bytes": 2261,
+      "sha256": "cc643de0f84f148ca6446e58fdc3d49f3ba68a5b7ee8b915af24f80ba7574692"
+    },
+    "examples/04_priority.py": {
+      "bytes": 2243,
+      "sha256": "8398e89a53f8d99743b29a55b1c66cf1a670b6e8481b637a43e05d1ba2d6357d"
+    },
+    "examples/05_batch.py": {
+      "bytes": 8745,
+      "sha256": "a82a874cf3f6b635405df27dfe1e31fc2c2929196a46177a460824c9e84d1557"
+    },
+    "examples/06_api.py": {
+      "bytes": 887,
+      "sha256": "42bd7ff2aeb63ce9969f85e7f7ac62001db295c26f697a7fcb7a8ae8b206a073"
+    },
+    "examples/__init__.py": {
+      "bytes": 73,
+      "sha256": "5db932e5bed182134b3c5a4d2e493167cc3f7d176fb347dd57010adfb957bf9f"
+    },
+    "models.lock.json": {
+      "bytes": 751,
+      "sha256": "5b217df7839a8dfc9e2cecc9ccc49f780b41fedafab82646348ecdc9f3d7ad38"
+    },
+    "production/__init__.py": {
+      "bytes": 59,
+      "sha256": "abc7259ebd4fa128ca6de0987a709642956a8d1605697eba541b67ba5e618a2f"
+    },
+    "production/api.py": {
+      "bytes": 4330,
+      "sha256": "f9f6294dbc8b86dbf35979ec01b20592877d0bb30f0811eaeccb0bc63826e910"
+    },
+    "production/calibration.py": {
+      "bytes": 7359,
+      "sha256": "2655111d917a9ba0d3b189209bbfce5372997aa3e8bb239152f80a376359985f"
+    },
+    "production/policies.py": {
+      "bytes": 10380,
+      "sha256": "cc7149e4111ee48b496f59d21b1b4687a084811101d82ad7e0816499dbc2553e"
+    },
+    "production/runtime.py": {
+      "bytes": 6891,
+      "sha256": "66dcc013801b560a2f3a51630d8dcbffd73e4f10249d20e8a0deca8110ed2b30"
+    },
+    "production/schemas.py": {
+      "bytes": 3450,
+      "sha256": "dbffe227508b7166267e8b31640962ae0231c23e6ea4b2b9280437a3dbae88df"
+    },
+    "requirements.txt": {
+      "bytes": 64,
+      "sha256": "f8a89205f974dd16ade9d56cc2526c9c1aa1838ed603795760827d7a4ef51ee1"
+    },
+    "tests/test_calibration.py": {
+      "bytes": 4692,
+      "sha256": "1468156afaedbdfe2f7ff5a47be619fe781186215aafd5c474282eb6968fb5d6"
+    },
+    "tests/test_policies.py": {
+      "bytes": 4878,
+      "sha256": "0e5376593e20e4c8efda1d806d812db2c9389d2b0bfb77bb3ada1fef02f16d39"
+    },
+    "tools/__init__.py": {
+      "bytes": 51,
+      "sha256": "1b059076c55b3777d05a0d08514caee2c6ef2aea4e216dcc9e3d5776acf7cc9b"
+    },
+    "tools/calibrate.py": {
+      "bytes": 4287,
+      "sha256": "d50fb2f7773eb6de62204f3e59ec969c7c2ee384ddd74e8e7626d9af05b7c0f6"
+    },
+    "tools/download_models.py": {
+      "bytes": 1888,
+      "sha256": "159b2a89efa14916c5aaa24aa53da5bde5e2bff583b081066a21bda1d66f260f"
+    }
+  }
+}

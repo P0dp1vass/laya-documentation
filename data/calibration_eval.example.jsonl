@@ -1,0 +1,12 @@
+{"id": "eval-01", "text": "Give me back the money for the duplicate renewal.", "label": true}
+{"id": "eval-02", "text": "Please reimburse the amount for the undelivered item.", "label": true}
+{"id": "eval-03", "text": "I am requesting a refund for the unused plan.", "label": true}
+{"id": "eval-04", "text": "Return the extra amount you collected yesterday.", "label": true}
+{"id": "eval-05", "text": "Could you refund the cancelled booking?", "label": true}
+{"id": "eval-06", "text": "Please reverse this accidental purchase.", "label": true}
+{"id": "eval-07", "text": "How many days do refunds usually take?", "label": false}
+{"id": "eval-08", "text": "My existing refund has not arrived. What is its status?", "label": false}
+{"id": "eval-09", "text": "Please fix the login problem.", "label": false}
+{"id": "eval-10", "text": "I was charged twice, but do not refund anything yet; investigate first.", "label": false}
+{"id": "eval-11", "text": "Where can I download the receipt?", "label": false}
+{"id": "eval-12", "text": "I want to upgrade to the annual plan.", "label": false}

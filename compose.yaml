@@ -1,0 +1,19 @@
+services:
+  laya:
+    build:
+      context: .
+      args:
+        TORCH_INDEX_URL: ${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cpu}
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      LAYA_MODEL: ${LAYA_MODEL:-multilingual}
+      LAYA_DEVICE: ${LAYA_DEVICE:-cpu}
+      LAYA_API_KEY: ${LAYA_API_KEY:?Set LAYA_API_KEY to a secret of at least 16 characters}
+      LAYA_VALIDATED_POLICY: ${LAYA_VALIDATED_POLICY:-0}
+    volumes:
+      - hf-cache:/home/app/.cache/huggingface
+    init: true
+    stop_grace_period: 120s
+volumes:
+  hf-cache:

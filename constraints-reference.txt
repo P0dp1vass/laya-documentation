@@ -1,0 +1,8 @@
+# Reference Python 3.12 stack; choose the PyTorch wheel index for your hardware.
+# This is not a complete transitive lock and has not been inference-tested here.
+torch==2.8.0
+transformers==5.0.0
+numpy==2.2.6
+safetensors==0.6.2
+huggingface_hub==1.3.0
+tokenizers==0.22.1

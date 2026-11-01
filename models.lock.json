@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "laya_version": "0.4.21",
+  "source_commit": "0565524a27bcb9821bcd7c42aaf49d925f6f8560",
+  "source_url": "https://github.com/NandhaKishorM/laya",
+  "models": {
+    "english": {
+      "repo_id": "convaiinnovations/laya",
+      "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+      "local_env": "LAYA_ENGLISH_PATH"
+    },
+    "multilingual": {
+      "repo_id": "convaiinnovations/laya-multilingual",
+      "revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+      "local_env": "LAYA_MULTILINGUAL_PATH"
+    },
+    "typed-decisions": {
+      "repo_id": "convaiinnovations/laya-typed-decisions",
+      "revision": "e929ae5cf69bc34259cd2f95c9e91145b818b1f0",
+      "local_env": "LAYA_TYPED_DECISIONS_PATH"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+services:
+  laya:
+    build:
+      args:
+        TORCH_INDEX_URL: https://download.pytorch.org/whl/cu128
+    environment:
+      LAYA_DEVICE: cuda
+    gpus: all
