@@ -2,7 +2,8 @@
   "format_version": 1,
   "title": "Laya: Russian official guide and six production scenarios",
   "created_utc": "2026-11-01T22:02:31.011033+00:00",
-  "entrypoint_document": "02_PRODUCTION.md",
+  "entrypoint_document": "README.md",
+  "production_document": "02_PRODUCTION.md",
   "general_document": "01_LAYA_GUIDE.md",
   "laya_version": "0.4.21",
   "official_source_commit": "0565524a27bcb9821bcd7c42aaf49d925f6f8560",
@@ -114,6 +115,10 @@
     "environment_note": "A first attempt to install pydantic==2.11.7 under system Python 3.14 failed because pydantic-core/PyO3 does not support that interpreter. Checks were then performed under the declared Python 3.12 reference. No model was run."
   },
   "files": {
+    "README.md": {
+      "bytes": 18317,
+      "sha256": "fbb493f619ba97c9b9c9940bc628e36d8bc742f11a94f311449f34cde6f59dbf"
+    },
     ".dockerignore": {
       "bytes": 58,
       "sha256": "83c0986aa16a5e6a4956731a0f072a394429263c9fdbd1ded25c20b334580740"
