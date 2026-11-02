@@ -114,10 +114,40 @@
     ],
     "environment_note": "A first attempt to install pydantic==2.11.7 under system Python 3.14 failed because pydantic-core/PyO3 does not support that interpreter. Checks were then performed under the declared Python 3.12 reference. No model was run."
   },
+  "documentation_revision": {
+    "purpose": "Expanded, connected Russian explanations for readers without a deep ML or deployment background",
+    "documents": [
+      "README.md",
+      "01_LAYA_GUIDE.md",
+      "02_PRODUCTION.md"
+    ],
+    "implementation_data_and_configuration_files_unchanged": 31,
+    "original_headings_preserved": 112,
+    "original_code_and_diagram_blocks_preserved": 50,
+    "original_link_targets_preserved": true,
+    "original_display_formulas_preserved": true,
+    "official_numbered_examples_covered": 41,
+    "checks": {
+      "interpreter": "Python 3.14.8, documentation and model-free checks only",
+      "markdown_link_targets_checked": 195,
+      "pinned_upstream_paths_checked": 107,
+      "python_code_blocks_parsed_without_execution": 5,
+      "bash_blocks_syntax_checked_without_execution": 35,
+      "fish_blocks_syntax_checked_without_execution": 1,
+      "cli_help_commands_passed": 6,
+      "ml_imports_on_cli_help": false,
+      "model_free_unit_tests_passed": 18,
+      "github_markdown_api_rendered_documents": 3,
+      "github_markdown_render_note": "HTML rendering checked; this does not claim JavaScript Mermaid visual rendering",
+      "model_weights_downloaded": false,
+      "model_inference_executed": false,
+      "gpu_or_docker_execution": false
+    }
+  },
   "files": {
     "README.md": {
-      "bytes": 18317,
-      "sha256": "fbb493f619ba97c9b9c9940bc628e36d8bc742f11a94f311449f34cde6f59dbf"
+      "bytes": 47554,
+      "sha256": "98cf696ab1d055870fbd89174c5b316e7c0a85ae52f0a5dd6a1bbad1992fca2e"
     },
     ".dockerignore": {
       "bytes": 58,
@@ -132,12 +162,12 @@
       "sha256": "da0e51af1ea05386ecdc277ce913da17c9fb36cb4a12e330498ae388f91f3c0a"
     },
     "01_LAYA_GUIDE.md": {
-      "bytes": 130397,
-      "sha256": "8e09d404e90e175c73a8f988793426a185f59d7f7b70f1ea4407a30e16b76a79"
+      "bytes": 256441,
+      "sha256": "91288583a3b04f571212da948e0726682e3b7c2529fca6ff6f9fc3c6bbb51d66"
     },
     "02_PRODUCTION.md": {
-      "bytes": 59306,
-      "sha256": "635595aedcb56e1d56e9602c07c1bff05f20514a4d20ff53a36c8639335255cb"
+      "bytes": 128306,
+      "sha256": "b28c78218588aa2199bc4b93bc1e4451b1b82686804097ebfec31b1da7f55b1e"
     },
     "Dockerfile": {
       "bytes": 937,
